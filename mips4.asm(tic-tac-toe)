@@ -1,3 +1,5 @@
+#Instructions developed with help from ChatGPT OpenAI
+
 .data
 board: .word 0,0,0,0,0,0,0,0,0
 
@@ -95,12 +97,10 @@ exit:
     li $v0, 10
     syscall
 
-
-# ----------------------------------------
 # pixel
 # Draw one pixel at coordinates (a0, a1)
 # Color is in a2
-# ----------------------------------------
+
 pixel:
     li $t0, 32
     mul $t1, $a1, $t0
@@ -113,11 +113,9 @@ pixel:
     sw $a2, 0($t0)
     jr $ra
 
-
-# ----------------------------------------
 # drawBoard
 # Draws the Tic-Tac-Toe grid
-# ----------------------------------------
+
 drawBoard:
     addiu $sp, $sp, -12
     sw $ra, 8($sp)
@@ -179,15 +177,13 @@ skip:
     addiu $sp, $sp, 12
     jr $ra
 
-
-# ----------------------------------------
 # drawMark
 # a0 = board position (0-8)
 # a1 = player (1 or 2)
 #
 # Fixed: saves registers that must survive
 # calls to pixel, preventing bad addresses.
-# ----------------------------------------
+
 drawMark:
     addiu $sp, $sp, -32
 
@@ -267,12 +263,10 @@ fillX:
     addiu $sp, $sp, 32
     jr $ra
 
-
-# ----------------------------------------
 # checkWin
 # Returns 1 or 2 if a player won.
 # Returns 0 if nobody has won.
-# ----------------------------------------
+
 checkWin:
     la $t0, wins
     li $t1, 8
