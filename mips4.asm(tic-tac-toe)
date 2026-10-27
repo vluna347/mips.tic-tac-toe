@@ -1,4 +1,9 @@
 #Instructions developed with help from ChatGPT OpenAI
+#Design Note:
+# Tic-Tac-Toe- Two player game, Player 1 is represented by red squares while player 2 is 
+# represented by blue squares on the bitmap display. An array is used to store and branches 
+# are used to check the validity of moves and other cases. If and invalid move is made an 
+# error message is displayed. Game ends when one player wins or the board is full as no player won.
 
 .data
 board: .word 0,0,0,0,0,0,0,0,0
